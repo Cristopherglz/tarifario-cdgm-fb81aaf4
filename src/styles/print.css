@@ -1,94 +1,205 @@
 @media print {
-  * {
-    margin: 0;
-    padding: 0;
+  /* Hide everything except the print preview */
+  body > * {
+    display: none !important;
   }
+  
   body {
-    background: white;
-    font-family: 'Arial', sans-serif;
-    color: #333;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: white !important;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+    color: #333 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
   }
+
+  /* Show only the print preview component */
+  .print-preview-container {
+    display: block !important;
+    position: static !important;
+    width: 100% !important;
+  }
+
   .no-print {
     display: none !important;
   }
-  .print-container {
-    width: 100%;
-    max-width: 100%;
-    padding: 20px;
-    background: white;
+
+  /* Page setup */
+  @page {
+    size: A4;
+    margin: 0;
   }
+
+  .print-page {
+    width: 210mm !important;
+    min-height: 297mm !important;
+    margin: 0 !important;
+    padding: 15mm 20mm !important;
+    background: white !important;
+    box-sizing: border-box !important;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+    color: #333 !important;
+    page-break-after: always !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .print-page:last-child {
+    page-break-after: avoid !important;
+  }
+
   .print-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 30px;
-    border-bottom: 3px solid #0891b2;
-    padding-bottom: 20px;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: flex-start !important;
+    margin-bottom: 10mm !important;
+    border-bottom: 3px solid #0891b2 !important;
+    padding-bottom: 8mm !important;
   }
+
   .print-logo {
-    max-width: 150px;
-    height: auto;
+    max-width: 100px !important;
+    height: auto !important;
+    object-fit: contain !important;
   }
+
+  .print-title-section {
+    flex: 1 !important;
+    text-align: center !important;
+  }
+
   .print-title {
-    font-size: 24px;
-    font-weight: bold;
-    color: #164e63;
-    text-align: center;
-    flex: 1;
+    font-size: 24px !important;
+    font-weight: bold !important;
+    color: #164e63 !important;
+    margin: 0 !important;
   }
-  .print-section {
-    margin-bottom: 20px;
-    page-break-inside: avoid;
+
+  .print-subtitle {
+    font-size: 11px !important;
+    color: #0891b2 !important;
+    margin: 3px 0 0 0 !important;
   }
-  .print-section-title {
-    font-size: 14px;
-    font-weight: bold;
-    color: #164e63;
-    margin-bottom: 10px;
-    border-bottom: 2px solid #06b6d4;
-    padding-bottom: 5px;
+
+  .print-info-section {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 8mm !important;
+    margin-bottom: 10mm !important;
+    font-size: 10px !important;
   }
+
+  .print-info-box {
+    background-color: #f0f9fa !important;
+    padding: 6mm !important;
+    border-left: 4px solid #0891b2 !important;
+  }
+
+  .print-info-label {
+    font-weight: bold !important;
+    color: #164e63 !important;
+    margin-bottom: 2mm !important;
+  }
+
+  .print-info-value {
+    color: #555 !important;
+    word-break: break-word !important;
+  }
+
   .print-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
+    width: 100% !important;
+    border-collapse: collapse !important;
+    margin-bottom: 8mm !important;
+    font-size: 9px !important;
   }
+
   .print-table th {
-    background-color: #f0f9fa;
-    border: 1px solid #06b6d4;
-    padding: 10px;
-    text-align: left;
-    font-weight: bold;
-    color: #164e63;
-    font-size: 12px;
+    background-color: #f0f9fa !important;
+    border: 1px solid #06b6d4 !important;
+    padding: 3mm !important;
+    text-align: left !important;
+    font-weight: bold !important;
+    color: #164e63 !important;
   }
+
   .print-table td {
-    border: 1px solid #cffafe;
-    padding: 10px;
-    font-size: 12px;
+    border: 1px solid #cffafe !important;
+    padding: 3mm !important;
+    color: #555 !important;
   }
-  .print-total {
-    background-color: #f0f9fa;
-    border: 2px solid #06b6d4;
-    padding: 15px;
-    text-align: right;
-    font-size: 16px;
-    font-weight: bold;
-    color: #164e63;
-    margin-bottom: 20px;
+
+  .print-table tr:nth-child(even) {
+    background-color: #f9fdfe !important;
   }
-  .print-info {
-    font-size: 11px;
-    color: #666;
-    line-height: 1.6;
+
+  .print-total-section {
+    background: #f0f9fa !important;
+    border: 2px solid #06b6d4 !important;
+    padding: 8mm !important;
+    margin-bottom: 10mm !important;
+    text-align: right !important;
+    border-radius: 4px !important;
   }
-  .page-break {
-    page-break-after: always;
+
+  .print-total-label {
+    font-size: 13px !important;
+    font-weight: bold !important;
+    color: #164e63 !important;
   }
+
+  .print-total-amount {
+    font-size: 20px !important;
+    font-weight: bold !important;
+    color: #0891b2 !important;
+    margin-top: 3mm !important;
+  }
+
+  .print-text-section {
+    font-size: 9px !important;
+    color: #555 !important;
+    line-height: 1.5 !important;
+    margin-bottom: 8mm !important;
+    white-space: pre-wrap !important;
+    word-break: break-word !important;
+  }
+
+  .print-signatures {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 20mm !important;
+    margin-top: 15mm !important;
+  }
+
+  .print-signature-box {
+    text-align: center !important;
+    border-top: 2px solid #333 !important;
+    padding-top: 20mm !important;
+    min-height: 40mm !important;
+  }
+
+  .print-signature-label {
+    font-size: 10px !important;
+    font-weight: bold !important;
+    color: #164e63 !important;
+    margin-top: 5mm !important;
+  }
+
+  .print-signature-name {
+    font-size: 9px !important;
+    color: #666 !important;
+    margin-top: 3mm !important;
+  }
+
+  .page-content {
+    flex: 1 !important;
+  }
+
   table {
-    page-break-inside: avoid;
+    page-break-inside: avoid !important;
   }
+
   tr {
-    page-break-inside: avoid;
+    page-break-inside: avoid !important;
   }
 }
