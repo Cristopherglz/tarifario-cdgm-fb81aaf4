@@ -79,7 +79,7 @@ export default function TarifarioFinal() {
     if (!servicio) return;
 
     const precioHora = calcularPrecio(valorHoraEnDivisa);
-    const horas = 1; // Por defecto 1 hora
+    const horas = servicio.horasBase; // Usar horas mínimas del servicio
     const subtotal = precioHora * horas;
 
     const nuevoItem: ItemPresupuesto = {
@@ -136,8 +136,11 @@ export default function TarifarioFinal() {
     setItemsPresupuesto(
       itemsPresupuesto.map((item) => {
         if (item.id === id) {
-          const subtotal = item.precioHora * nuevasHoras;
-          return { ...item, horas: nuevasHoras, subtotal };
+          // Enforce minimum hours based on service definition
+          const minHoras = item.servicio?.horasBase || 1;
+          const horasFinales = Math.max(nuevasHoras, minHoras);
+          const subtotal = item.precioHora * horasFinales;
+          return { ...item, horas: horasFinales, subtotal };
         }
         return item;
       })
@@ -317,6 +320,9 @@ export default function TarifarioFinal() {
                       <div className="flex-1">
                         <h3 className="font-bold text-cyan-900">{servicio.nombre}</h3>
                         <p className="text-xs text-cyan-600 mt-1">{servicio.descripcion}</p>
+                        <span className="inline-block mt-2 px-2 py-1 bg-cyan-100 text-cyan-700 rounded text-xs font-semibold">
+                          ⏱ Mínimo {servicio.horasBase} {servicio.horasBase === 1 ? 'hora' : 'horas'}
+                        </span>
                       </div>
                       <button
                         onClick={() => agregarServicio(servicio.id)}
@@ -416,9 +422,10 @@ export default function TarifarioFinal() {
                               type="number"
                               value={item.horas}
                               onChange={(e) => actualizarHoras(item.id, parseFloat(e.target.value) || 1)}
-                              min="0.5"
-                              step="0.5"
-                              className="w-16 px-2 py-1 border border-cyan-300 rounded text-center font-semibold"
+                              min={item.servicio?.horasBase || 1}
+                              step="1"
+                              className="w-20 px-2 py-1 border border-cyan-300 rounded text-center font-semibold"
+                              title={`Mínimo: ${item.servicio?.horasBase || 1} horas`}
                             />
                           </td>
                           <td className="py-3 px-4 text-right font-semibold text-cyan-700">
