@@ -165,7 +165,8 @@ export const TARIFAS_COMPLETAS: Servicio[] = [
   { id: 'vol1', nombre: 'Colgantes (supermercados/locales)', categoria: 'Volumétrico', subcategoria: 'Volumétrico', horasBase: 4, precioBase: 33.20, descripcion: 'Tamaño A6 o menor, 1 color' },
   { id: 'vol2', nombre: 'Llamadores (góndola de supermercados)', categoria: 'Volumétrico', subcategoria: 'Volumétrico', horasBase: 5, precioBase: 41.50, descripcion: 'Tamaño máximo A4, 4 colores' },
   { id: 'vol3', nombre: 'Stand (diseño morfológico)', categoria: 'Volumétrico', subcategoria: 'Volumétrico', horasBase: 18, precioBase: 149.40, descripcion: 'Diseño de exhibición o cubículo' },
-  { id: 'vol4', nombre: 'Stand (gráfica sobre estructura)', categoria: 'Volumétrico', subcategoria: 'Volumétrico', horasBase: 30, precioBase: 249.00, descripcion: 'Diseño gráfico sobre estructura existente' },
+  { id: 'vol4', nombre: 'Stand (gráfica sobre estructura)', categoria: 'Volumétrico', subcategoria: 'Volumétrico', horasBase: 30, precioBase: 249.00, descripcion: 'Aplicación de marca sobre estructura prediseñada' },
+  { id: 'vol5', nombre: 'Stand (Modelado 3D)', categoria: 'Volumétrico', subcategoria: 'Volumétrico', horasBase: 8, precioBase: 66.40, descripcion: 'Diseño morfológico con renderizado, hasta 5 vistas' },
 ];
 
 export const CATEGORIAS = [
