@@ -35,46 +35,7 @@ export default function PrintPreviewMultiPage({
   terminosCondiciones,
 }: PrintPreviewMultiPageProps) {
   return (
-    <div className="hidden print:block w-full bg-white">
-      <style>{`
-        @page { size: A4; margin: 0; }
-        @media print {
-          body { margin: 0; padding: 0; background: white; }
-          .print-page {
-            width: 210mm; height: 297mm; margin: 0; padding: 15mm 20mm;
-            background: white; box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: #333; page-break-after: always; display: flex; flex-direction: column;
-          }
-          .print-page:last-child { page-break-after: avoid; }
-          .print-header {
-            display: flex; justify-content: space-between; align-items: flex-start;
-            margin-bottom: 15mm; border-bottom: 3px solid #0891b2; padding-bottom: 10mm;
-          }
-          .print-logo { max-width: 100px; height: auto; object-fit: contain; }
-          .print-title-section { flex: 1; text-align: center; }
-          .print-title { font-size: 24px; font-weight: bold; color: #164e63; margin: 0; }
-          .print-subtitle { font-size: 11px; color: #0891b2; margin: 3px 0 0 0; }
-          .print-info-section { display: grid; grid-template-columns: 1fr 1fr; gap: 12mm; margin-bottom: 15mm; font-size: 10px; }
-          .print-info-box { background-color: #f0f9fa; padding: 8mm; border-left: 4px solid #0891b2; }
-          .print-info-label { font-weight: bold; color: #164e63; margin-bottom: 2mm; }
-          .print-info-value { color: #555; word-break: break-word; }
-          .print-table { width: 100%; border-collapse: collapse; margin-bottom: 10mm; font-size: 9px; }
-          .print-table th { background-color: #f0f9fa; border: 1px solid #06b6d4; padding: 5mm; text-align: left; font-weight: bold; color: #164e63; }
-          .print-table td { border: 1px solid #cffafe; padding: 5mm; color: #555; }
-          .print-table tr:nth-child(even) { background-color: #f9fdfe; }
-          .print-total-section { background: linear-gradient(135deg, #f0f9fa 0%, #e0f7fa 100%); border: 2px solid #06b6d4; padding: 10mm; margin-bottom: 15mm; text-align: right; border-radius: 4px; }
-          .print-total-label { font-size: 13px; font-weight: bold; color: #164e63; }
-          .print-total-amount { font-size: 20px; font-weight: bold; color: #0891b2; margin-top: 3mm; }
-          .print-text-section { font-size: 9px; color: #555; line-height: 1.5; margin-bottom: 10mm; white-space: pre-wrap; word-break: break-word; }
-          .print-signatures { display: grid; grid-template-columns: 1fr 1fr; gap: 20mm; margin-top: 20mm; }
-          .print-signature-box { text-align: center; border-top: 2px solid #333; padding-top: 25mm; min-height: 50mm; }
-          .print-signature-label { font-size: 10px; font-weight: bold; color: #164e63; margin-top: 5mm; }
-          .print-signature-name { font-size: 9px; color: #666; margin-top: 3mm; }
-          .page-content { flex: 1; }
-        }
-      `}</style>
-
+    <div className="hidden print:block print-preview-container w-full bg-white">
       {/* PAGE 1 */}
       <div className="print-page">
         <div className="page-content">
