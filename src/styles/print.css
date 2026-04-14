@@ -33,25 +33,20 @@
   /* Page setup */
   @page {
     size: A4;
-    margin: 0;
+    margin: 10mm 15mm;
   }
 
   .print-page {
-    width: 210mm !important;
-    min-height: 297mm !important;
+    width: 100% !important;
+    min-height: auto !important;
     margin: 0 !important;
-    padding: 15mm 20mm !important;
+    padding: 0 !important;
     background: white !important;
     box-sizing: border-box !important;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
     color: #333 !important;
-    page-break-after: always !important;
-    display: flex !important;
-    flex-direction: column !important;
-  }
-
-  .print-page:last-child {
-    page-break-after: avoid !important;
+    page-break-after: auto !important;
+    display: block !important;
   }
 
   .print-header {
@@ -59,8 +54,8 @@
     justify-content: space-between !important;
     align-items: flex-start !important;
     margin-bottom: 10mm !important;
-    border-bottom: 3px solid #0891b2 !important;
-    padding-bottom: 8mm !important;
+    border-bottom: 2px solid #0891b2 !important;
+    padding-bottom: 5mm !important;
   }
 
   .print-logo {
@@ -90,15 +85,15 @@
   .print-info-section {
     display: grid !important;
     grid-template-columns: 1fr 1fr !important;
-    gap: 8mm !important;
-    margin-bottom: 10mm !important;
-    font-size: 10px !important;
+    gap: 4mm !important;
+    margin-bottom: 6mm !important;
+    font-size: 9px !important;
   }
 
   .print-info-box {
     background-color: #f0f9fa !important;
-    padding: 6mm !important;
-    border-left: 4px solid #0891b2 !important;
+    padding: 3mm 4mm !important;
+    border-left: 3px solid #0891b2 !important;
   }
 
   .print-info-label {
@@ -141,8 +136,8 @@
   .print-total-section {
     background: #f0f9fa !important;
     border: 2px solid #06b6d4 !important;
-    padding: 8mm !important;
-    margin-bottom: 10mm !important;
+    padding: 5mm !important;
+    margin-bottom: 6mm !important;
     text-align: right !important;
     border-radius: 4px !important;
   }
@@ -164,7 +159,7 @@
     font-size: 9px !important;
     color: #555 !important;
     line-height: 1.5 !important;
-    margin-bottom: 8mm !important;
+    margin-bottom: 0 !important;
     white-space: pre-wrap !important;
     word-break: break-word !important;
   }
@@ -172,15 +167,15 @@
   .print-signatures {
     display: grid !important;
     grid-template-columns: 1fr 1fr !important;
-    gap: 20mm !important;
-    margin-top: 15mm !important;
+    gap: 15mm !important;
+    margin-top: 10mm !important;
   }
 
   .print-signature-box {
     text-align: center !important;
     border-top: 2px solid #333 !important;
-    padding-top: 20mm !important;
-    min-height: 40mm !important;
+    padding-top: 15mm !important;
+    min-height: 25mm !important;
   }
 
   .print-signature-label {
@@ -196,15 +191,20 @@
     margin-top: 3mm !important;
   }
 
-  .page-content {
-    flex: 1 !important;
+  .print-section-title {
+    margin-bottom: 2mm !important;
   }
 
   table {
-    page-break-inside: avoid !important;
+    page-break-inside: auto !important;
   }
 
   tr {
     page-break-inside: avoid !important;
   }
+}
+
+/* Hide print preview on screen */
+.print-preview-container {
+  display: none;
 }
