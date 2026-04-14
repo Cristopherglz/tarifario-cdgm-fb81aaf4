@@ -157,7 +157,8 @@ export default function TarifarioFinal() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-cyan-50 to-slate-100 py-8 px-4">
-      <div className="max-w-7xl mx-auto">
+      <div className="no-print">
+        <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
           <img src="/1a0b5b42-2bdc-4877-8258-ddfd97b3f4ae.png" alt="CDGM Logo" className="h-24 mx-auto mb-6" />
@@ -461,13 +462,13 @@ export default function TarifarioFinal() {
             )}
           </div>
         </div>
-      </div>
+        </div>
 
-      {/* Popup Presupuesto */}
-      {mostrarPopupPresupuesto && (
-        <div className="fixed inset-0 bg-slate-500 bg-opacity-40 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-          <Card className="w-full max-w-4xl max-h-[90vh] overflow-y-auto bg-white shadow-2xl border-0">
-            <div className="p-8">
+        {/* Popup Presupuesto */}
+        {mostrarPopupPresupuesto && (
+          <div className="fixed inset-0 bg-slate-500 bg-opacity-40 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+            <Card className="w-full max-w-4xl max-h-[90vh] overflow-y-auto bg-white shadow-2xl border-0">
+              <div className="p-8">
               {/* Header del Popup */}
               <div className="flex items-center justify-between mb-8">
                 <h2 className="text-3xl font-bold text-cyan-900">Plantilla de Presupuesto</h2>
@@ -649,7 +650,7 @@ export default function TarifarioFinal() {
                 {/* Botones de Acción */}
                 <div className="flex gap-4 pt-6 border-t-2 border-cyan-200">
                   <button
-                    onClick={() => window.print()}
+                    onClick={handlePrint}
                     className="flex-1 px-6 py-3 bg-cyan-600 text-white rounded-lg hover:bg-cyan-700 transition font-bold flex items-center justify-center gap-2"
                   >
                     <Printer size={20} />
@@ -663,30 +664,15 @@ export default function TarifarioFinal() {
                   </button>
                 </div>
               </div>
-            </div>
-          </Card>
-        </div>
-      )}
+              </div>
+            </Card>
+          </div>
+        )}
 
-      {/* Componente de Vista Previa de Impresión */}
-      <PrintPreviewMultiPage
-        logoProfesional={logoProfesional}
-        numeroMatricula={numeroMatricula}
-        nombreProfesional={nombreProfesional}
-        nombreCliente={nombreCliente}
-        fechaEmision={fechaEmision}
-        fechaValidez={fechaValidez}
-        itemsPresupuesto={itemsPresupuesto}
-        totalPresupuesto={totalPresupuesto}
-        divisa={divisa}
-        formaPago={formaPago}
-        terminosCondiciones={terminosCondiciones}
-      />
-
-      {/* Sección de Instrucciones */}
-      <div className="mt-16 mb-8">
-        <Card className="p-8 bg-gradient-to-br from-cyan-50 to-blue-50 shadow-lg border-2 border-cyan-200">
-          <div className="max-w-4xl mx-auto">
+        {/* Sección de Instrucciones */}
+        <div className="mt-16 mb-8">
+          <Card className="p-8 bg-gradient-to-br from-cyan-50 to-blue-50 shadow-lg border-2 border-cyan-200">
+            <div className="max-w-4xl mx-auto">
             <h2 id="instructivo-uso" className="text-2xl font-bold text-cyan-900 mb-6 text-center">📖 Cómo Usar el Tarifario</h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -824,34 +810,38 @@ export default function TarifarioFinal() {
             <div className="mt-6 p-4 bg-cyan-100 border-l-4 border-cyan-600 rounded">
               <p className="text-sm text-cyan-900"><strong>💡 Consejo:</strong> El presupuesto se genera en 3 páginas: Página 1 con datos del profesional y cliente, Página 2 con el detalle de servicios y total, y Página 3 con forma de pago, términos y espacios para firmas.</p>
             </div>
-          </div>
-        </Card>
+            </div>
+          </Card>
+        </div>
+
+        {/* Botón de Sugerencias de Mejoras */}
+        <div className="mt-8 mb-16 flex justify-center">
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSecU1AeQMq2PbkoO6K75lSXgGDALW0_14eMPVYkNNdQgLZQuA/viewform"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-cyan-600 to-cyan-700 text-white rounded-lg hover:from-cyan-700 hover:to-cyan-800 transition-all duration-300 font-bold shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+          >
+            <MessageSquare size={20} />
+            Sugerencias de mejoras al tarifario
+          </a>
+        </div>
       </div>
 
-      {/* Botón de Sugerencias de Mejoras */}
-      <div className="mt-8 mb-16 flex justify-center">
-        <a
-          href="https://docs.google.com/forms/d/e/1FAIpQLSecU1AeQMq2PbkoO6K75lSXgGDALW0_14eMPVYkNNdQgLZQuA/viewform"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-cyan-600 to-cyan-700 text-white rounded-lg hover:from-cyan-700 hover:to-cyan-800 transition-all duration-300 font-bold shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-        >
-          <MessageSquare size={20} />
-          Sugerencias de mejoras al tarifario
-        </a>
-      </div>
-
-      {/* Estilos de Impresión */}
-      <style>{`
-        @media print {
-          body {
-            background: white;
-          }
-          .no-print {
-            display: none;
-          }
-        }
-      `}</style>
+      {/* Componente de Vista Previa de Impresión */}
+      <PrintPreviewMultiPage
+        logoProfesional={logoProfesional}
+        numeroMatricula={numeroMatricula}
+        nombreProfesional={nombreProfesional}
+        nombreCliente={nombreCliente}
+        fechaEmision={fechaEmision}
+        fechaValidez={fechaValidez}
+        itemsPresupuesto={itemsPresupuesto}
+        totalPresupuesto={totalPresupuesto}
+        divisa={divisa}
+        formaPago={formaPago}
+        terminosCondiciones={terminosCondiciones}
+      />
     </div>
   );
 }

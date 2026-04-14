@@ -1,9 +1,5 @@
 @media print {
-  /* Hide everything except the print preview */
-  body > * {
-    display: none !important;
-  }
-  
+  html,
   body {
     margin: 0 !important;
     padding: 0 !important;
@@ -14,11 +10,20 @@
     print-color-adjust: exact !important;
   }
 
+  #root {
+    margin: 0 !important;
+    padding: 0 !important;
+    background: white !important;
+    display: block !important;
+  }
+
   /* Show only the print preview component */
   .print-preview-container {
     display: block !important;
     position: static !important;
     width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
   .no-print {
