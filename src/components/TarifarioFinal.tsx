@@ -161,8 +161,8 @@ export default function TarifarioFinal() {
         <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
-          <img src="/1a0b5b42-2bdc-4877-8258-ddfd97b3f4ae.png" alt="CDGM Logo" className="h-24 mx-auto mb-6" />
-          <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-cyan-900 via-cyan-700 to-cyan-600 bg-clip-text text-transparent mb-3">
+          <img src="/1a0b5b42-2bdc-4877-8258-ddfd97b3f4ae.png" alt="CDGM Logo" className="h-24 mx-auto mb-6 object-scale-down" />
+          <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-cyan-900 via-cyan-700 to-cyan-600 bg-clip-text text-transparent mb-3">
             Tarifario para profesionales
           </h1>
         </div>
