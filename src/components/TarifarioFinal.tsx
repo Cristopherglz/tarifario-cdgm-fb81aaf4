@@ -269,7 +269,7 @@ export default function TarifarioFinal() {
             {/* Categorías y Servicios */}
             <Card className="p-8 bg-white shadow-2xl border-0">
               <div className="flex items-center justify-between mb-6">
-                <h2 className="text-2xl font-bold text-cyan-900">Selecciona Servicios</h2>
+                <h2 className="text-2xl font-bold text-cyan-900">Selecciona servicios</h2>
                 <button
                   onClick={() => {
                     const instructivoSection = document.getElementById('instructivo-uso');
@@ -673,7 +673,7 @@ export default function TarifarioFinal() {
         <div className="mt-16 mb-8">
           <Card className="p-8 bg-gradient-to-br from-cyan-50 to-blue-50 shadow-lg border-2 border-cyan-200">
             <div className="max-w-4xl mx-auto">
-            <h2 id="instructivo-uso" className="text-2xl font-bold text-cyan-900 mb-6 text-center">📖 Cómo Usar el Tarifario</h2>
+            <h2 id="instructivo-uso" className="text-2xl font-bold text-cyan-900 mb-6 text-center">📖 Cómo usar el Tarifario</h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* Paso 1 - Tarjeta Interactiva */}
