@@ -1,5 +1,5 @@
-import React, { useState, useMemo } from 'react';
-import { Trash2, Plus, X, Printer, MessageSquare, Check } from 'lucide-react';
+import React, { useState, useMemo, useEffect } from 'react';
+import { Trash2, Plus, X, Printer, MessageSquare, Check, ArrowUp } from 'lucide-react';
 import '@/styles/print.css';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
@@ -46,6 +46,7 @@ export default function TarifarioFinal() {
   const [mostrarPersonalizadas, setMostrarPersonalizadas] = useState(false);
   const [mostrarPopupPresupuesto, setMostrarPopupPresupuesto] = useState(false);
   const [servicioAgregadoId, setServicioAgregadoId] = useState<string | null>(null);
+  const [mostrarBotonArriba, setMostrarBotonArriba] = useState(false);
   
   // Datos del presupuesto
   const [numeroMatricula, setNumeroMatricula] = useState('');
@@ -101,6 +102,16 @@ export default function TarifarioFinal() {
       setServicioAgregadoId(null);
     }, 1000);
   };
+
+  // Detectar scroll para mostrar/ocultar botón de volver arriba
+  useEffect(() => {
+    const handleScroll = () => {
+      setMostrarBotonArriba(window.scrollY > 300);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   // Agregar servicio personalizada
   const agregarServicioPersonalizada = () => {
@@ -842,6 +853,17 @@ export default function TarifarioFinal() {
         formaPago={formaPago}
         terminosCondiciones={terminosCondiciones}
       />
+
+      {/* Botón flotante para volver arriba */}
+      {mostrarBotonArriba && (
+        <button
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          className="fixed bottom-8 right-8 bg-cyan-600 hover:bg-cyan-700 text-white rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 z-50 no-print"
+          aria-label="Volver arriba"
+        >
+          <ArrowUp size={24} />
+        </button>
+      )}
     </div>
   );
 }
