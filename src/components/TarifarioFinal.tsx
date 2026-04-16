@@ -103,6 +103,16 @@ export default function TarifarioFinal() {
     }, 1000);
   };
 
+  // Detectar scroll para mostrar/ocultar botón de volver arriba
+  useEffect(() => {
+    const handleScroll = () => {
+      setMostrarBotonArriba(window.scrollY > 300);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   // Agregar servicio personalizada
   const agregarServicioPersonalizada = () => {
     if (!servicioPersonalizada.trim()) return;
