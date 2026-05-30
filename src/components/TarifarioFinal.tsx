@@ -734,7 +734,7 @@ export default function TarifarioFinal() {
                   </div>
                   <div className="flex-1">
                     <h3 className="text-lg font-bold text-cyan-900 mb-2">Selecciona el Tipo de Cliente</h3>
-                    <p className="text-sm text-cyan-800">Elige entre Cliente A (Pequeña), B (Mediana) o C (Grande). Esto ajusta el precio según la magnitud del cliente.</p>
+                    <p className="text-sm text-cyan-800">Elige entre Cliente A (Grande), B (Mediana) o C (Pequeña). Esto ajusta el precio según la magnitud del cliente.</p>
                   </div>
                 </div>
               </div>
