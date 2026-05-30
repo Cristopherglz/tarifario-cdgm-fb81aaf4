@@ -267,9 +267,9 @@ export default function TarifarioFinal() {
                   onChange={(e) => setTipoCliente(e.target.value)}
                   className="w-full px-3 py-2 border-2 border-cyan-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500 bg-white text-cyan-900 font-semibold text-sm hover:border-cyan-400 transition"
                 >
-                  <option value="A">Cliente A / Pequeña</option>
+                  <option value="A">Cliente A / Grande</option>
                   <option value="B">Cliente B / Mediana</option>
-                  <option value="C">Cliente C / Grande</option>
+                  <option value="C">Cliente C / Pequeña</option>
                 </select>
               </div>
             </Card>
@@ -734,7 +734,7 @@ export default function TarifarioFinal() {
                   </div>
                   <div className="flex-1">
                     <h3 className="text-lg font-bold text-cyan-900 mb-2">Selecciona el Tipo de Cliente</h3>
-                    <p className="text-sm text-cyan-800">Elige entre Cliente A (Pequeña), B (Mediana) o C (Grande). Esto ajusta el precio según la magnitud del cliente.</p>
+                    <p className="text-sm text-cyan-800">Elige entre Cliente A (Grande), B (Mediana) o C (Pequeña). Esto ajusta el precio según la magnitud del cliente.</p>
                   </div>
                 </div>
               </div>
