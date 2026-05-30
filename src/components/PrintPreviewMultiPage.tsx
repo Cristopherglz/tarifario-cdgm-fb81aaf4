@@ -88,11 +88,9 @@ export default function PrintPreviewMultiPage({
         <table className="print-table" data-pdf-section>
           <thead>
             <tr>
-              <th style={{ width: '40%' }}>Descripción</th>
-              <th style={{ width: '20%' }}>Categoría</th>
-              <th style={{ width: '10%' }}>Horas</th>
-              <th style={{ width: '15%' }}>Precio/Hora</th>
-              <th style={{ width: '15%' }}>Total</th>
+              <th style={{ width: '50%' }}>Descripción</th>
+              <th style={{ width: '25%' }}>Categoría</th>
+              <th style={{ width: '25%' }}>Total</th>
             </tr>
           </thead>
           <tbody>
@@ -100,8 +98,6 @@ export default function PrintPreviewMultiPage({
               <tr key={index}>
                 <td>{item.nombre}</td>
                 <td>{item.categoria}</td>
-                <td style={{ textAlign: 'center' }}>{item.horas}</td>
-                <td style={{ textAlign: 'right' }}>${formatearMoneda(item.precioHora, 2)}</td>
                 <td style={{ textAlign: 'right', fontWeight: 'bold' }}>${formatearMoneda(item.subtotal, 2)}</td>
               </tr>
             ))}
