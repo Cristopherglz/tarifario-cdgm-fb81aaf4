@@ -180,7 +180,7 @@ export const MULTIPLICADORES_EXPERIENCIA: Record<string, number> = {
 };
 
 export const MULTIPLICADORES_CLIENTE: Record<string, number> = {
-  A: 1.00, B: 1.20, C: 1.35,
+  A: 1.35, B: 1.20, C: 1.00,
 };
 
 export const ETIQUETAS_EXPERIENCIA: Record<string, string> = {
@@ -188,5 +188,5 @@ export const ETIQUETAS_EXPERIENCIA: Record<string, string> = {
 };
 
 export const ETIQUETAS_CLIENTE: Record<string, string> = {
-  A: 'Cliente A / Pequeña', B: 'Cliente B / Mediana', C: 'Cliente C / Grande',
+  A: 'Cliente A / Grande', B: 'Cliente B / Mediana', C: 'Cliente C / Pequeña',
 };
