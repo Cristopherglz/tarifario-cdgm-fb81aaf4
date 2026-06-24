@@ -709,8 +709,8 @@ export default function TarifarioFinal() {
                     <span className="text-white font-bold text-lg">2</span>
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-lg font-bold text-cyan-900 mb-2">Establece el Valor Hora</h3>
-                    <p className="text-sm text-cyan-800">Ingresa tu valor hora sin decimales. Este será el precio base para calcular todos los servicios.</p>
+                    <h3 className="text-lg font-bold text-cyan-900 mb-2">Verifica el Valor Hora</h3>
+                    <p className="text-sm text-cyan-800">En ARS el valor está fijado por el tarifario. En USD ingresá el valor hora con coma para decimales (ej: 50,00). Este será el precio base para calcular todos los servicios.</p>
                   </div>
                 </div>
               </div>
