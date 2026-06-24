@@ -748,8 +748,8 @@ export default function TarifarioFinal() {
                     <span className="text-white font-bold text-lg">5</span>
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-lg font-bold text-cyan-900 mb-2">Elige los Servicios</h3>
-                    <p className="text-sm text-cyan-800">Selecciona las categorías y luego los servicios específicos. Haz clic en "+ Agregar" para incluirlos en el presupuesto.</p>
+                    <h3 className="text-lg font-bold text-cyan-900 mb-2">Filtra y Elige los Servicios</h3>
+                    <p className="text-sm text-cyan-800">Usá los botones de categoría para filtrar, luego hacé clic en "+ Agregar" para incluir cada servicio en el presupuesto.</p>
                   </div>
                 </div>
               </div>
