@@ -172,7 +172,9 @@ export default function TarifarioFinal() {
         <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
-          <img src="/1a0b5b42-2bdc-4877-8258-ddfd97b3f4ae.png" alt="CDGM Logo" className="h-24 mx-auto mb-6 object-scale-down" />
+          <a href="https://cdgm.org.ar">
+            <img src="/1a0b5b42-2bdc-4877-8258-ddfd97b3f4ae.png" alt="CDGM Logo" className="h-24 mx-auto mb-6 object-scale-down" />
+          </a>
           <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-cyan-900 via-cyan-700 to-cyan-600 bg-clip-text text-transparent mb-3">
             Tarifario para profesionales
           </h1>
@@ -707,8 +709,8 @@ export default function TarifarioFinal() {
                     <span className="text-white font-bold text-lg">2</span>
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-lg font-bold text-cyan-900 mb-2">Establece el Valor Hora</h3>
-                    <p className="text-sm text-cyan-800">Ingresa tu valor hora sin decimales. Este será el precio base para calcular todos los servicios.</p>
+                    <h3 className="text-lg font-bold text-cyan-900 mb-2">Verifica el Valor Hora</h3>
+                    <p className="text-sm text-cyan-800">En ARS el valor está fijado por el tarifario. En USD ingresá el valor hora con coma para decimales (ej: 50,00). Este será el precio base para calcular todos los servicios.</p>
                   </div>
                 </div>
               </div>
@@ -734,7 +736,7 @@ export default function TarifarioFinal() {
                   </div>
                   <div className="flex-1">
                     <h3 className="text-lg font-bold text-cyan-900 mb-2">Selecciona el Tipo de Cliente</h3>
-                    <p className="text-sm text-cyan-800">Elige entre Cliente A (Grande), B (Mediana) o C (Pequeña). Esto ajusta el precio según la magnitud del cliente.</p>
+                    <p className="text-sm text-cyan-800">Elige entre Cliente A (Grande, x1.35), B (Mediana, x1.2) o C (Pequeña, x1). Esto ajusta el precio según la magnitud del cliente.</p>
                   </div>
                 </div>
               </div>
@@ -746,8 +748,8 @@ export default function TarifarioFinal() {
                     <span className="text-white font-bold text-lg">5</span>
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-lg font-bold text-cyan-900 mb-2">Elige los Servicios</h3>
-                    <p className="text-sm text-cyan-800">Selecciona las categorías y luego los servicios específicos. Haz clic en "+ Agregar" para incluirlos en el presupuesto.</p>
+                    <h3 className="text-lg font-bold text-cyan-900 mb-2">Filtra y Elige los Servicios</h3>
+                    <p className="text-sm text-cyan-800">Usá los botones de categoría para filtrar, luego hacé clic en "+ Agregar" para incluir cada servicio en el presupuesto.</p>
                   </div>
                 </div>
               </div>
@@ -760,7 +762,7 @@ export default function TarifarioFinal() {
                   </div>
                   <div className="flex-1">
                     <h3 className="text-lg font-bold text-cyan-900 mb-2">Ajusta las Horas</h3>
-                    <p className="text-sm text-cyan-800">Modifica la cantidad de horas para cada servicio. El precio se calculará automáticamente.</p>
+                    <p className="text-sm text-cyan-800">Modifica la cantidad de horas para cada servicio respetando el mínimo establecido. El precio se calculará automáticamente.</p>
                   </div>
                 </div>
               </div>
@@ -812,14 +814,14 @@ export default function TarifarioFinal() {
                   </div>
                   <div className="flex-1">
                     <h3 className="text-lg font-bold text-cyan-900 mb-2">Imprime o Descarga</h3>
-                    <p className="text-sm text-cyan-800">Haz clic en "Imprimir Presupuesto" para generar un documento profesional en 3 páginas listo para firmar.</p>
+                    <p className="text-sm text-cyan-800">Haz clic en "Imprimir Presupuesto" para generar un documento profesional continuo con datos, detalle de servicios, total, condiciones y firmas.</p>
                   </div>
                 </div>
               </div>
             </div>
 
             <div className="mt-6 p-4 bg-cyan-100 border-l-4 border-cyan-600 rounded">
-              <p className="text-sm text-cyan-900"><strong>💡 Consejo:</strong> El presupuesto se genera en 3 páginas: Página 1 con datos del profesional y cliente, Página 2 con el detalle de servicios y total, y Página 3 con forma de pago, términos y espacios para firmas.</p>
+              <p className="text-sm text-cyan-900"><strong>💡 Consejo:</strong> El presupuesto se imprime como un documento continuo que incluye tus datos, los del cliente, el detalle de servicios (sin columnas de horas ni precio/hora), el total, forma de pago, términos y espacios para firmas. Usá "Guardar como PDF" en el diálogo de impresión para descargarlo.</p>
             </div>
             </div>
           </Card>
